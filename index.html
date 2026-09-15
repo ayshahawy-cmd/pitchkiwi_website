@@ -164,28 +164,18 @@
   .problem-list .row { align-items: center; }
   .problem-list .row p { margin: 0; font-size: 16.5px; }
 
-  /* Demo: video + screenshot placeholders */
-  .demo-video-placeholder {
-    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden;
-    background: var(--dark); border: 1px dashed rgba(243,238,226,0.25);
-    display: flex; align-items: center; justify-content: center; margin-bottom: 28px;
-  }
-  .demo-video-placeholder iframe { width: 100%; height: 100%; border: 0; }
-  .demo-video-empty { text-align: center; color: rgba(243,238,226,0.55); }
-  .demo-video-icon {
-    display: flex; width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 12px;
-    background: rgba(243,238,226,0.08); align-items: center; justify-content: center;
-    font-size: 16px; color: var(--green);
-  }
-  .demo-video-empty p { margin: 4px 0; font-size: 14px; }
-  .demo-video-hint { font-size: 12.5px; opacity: 0.75; font-family: 'JetBrains Mono', monospace; }
-  .screens-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .screen-placeholder {
-    aspect-ratio: 4 / 3; border-radius: 12px; border: 1px dashed var(--line);
-    background: var(--white); display: flex; align-items: center; justify-content: center;
-    color: var(--muted); font-size: 13.5px; font-family: 'JetBrains Mono', monospace;
-  }
-  @media (max-width: 620px) { .screens-row { grid-template-columns: 1fr; } }
+  /* Screenshots */
+  .shot-frame { background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .shot-chrome { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  .shot-chrome span { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .shot-main { margin-bottom: 16px; }
+  .shot-main .shot-body { aspect-ratio: 16 / 10; }
+  .shot-body { display: flex; align-items: center; justify-content: center; background: var(--beige); }
+  .shot-body img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shot-label { color: var(--muted); font-size: 13.5px; font-family: 'JetBrains Mono', monospace; }
+  .shots-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .shots-row .shot-body { aspect-ratio: 4 / 3; }
+  @media (max-width: 620px) { .shots-row { grid-template-columns: 1fr; } }
 
   /* Solution: Prompt Mode */
   .promptmode {
@@ -329,7 +319,7 @@
       <p class="lead">Hold a key, talk, and clean text lands wherever your cursor is: Claude Code, Cursor, Terminal, Slack, your browser. Speech recognition runs entirely on your Mac, so what you say out loud stays local and secure.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#pricing">Buy for $16.99</a>
-        <a class="btn btn-ghost" href="#demo">Watch the demo</a>
+        <a class="btn btn-ghost" href="#demo">See it in action</a>
       </div>
       <p class="cta-note">macOS 14+, Apple Silicon. $16.99 once, no subscription, no account.</p>
       <div class="trust-row">
@@ -346,27 +336,34 @@
     </div>
   </div>
 
-  <!-- DEMO -->
+  <!-- SCREENSHOTS -->
   <section class="wrap" id="demo">
     <div class="section-head">
       <h2>See it in action</h2>
-      <p>A minute is enough to see the whole loop: hold the key, talk, watch it land cleaned up at your cursor.</p>
+      <p>Hold the key, talk, and watch clean text land at your cursor.</p>
     </div>
-    <div class="demo-video-placeholder">
-      <!-- TODO: replace this placeholder with your Loom embed, e.g.:
-      <iframe src="https://www.loom.com/embed/YOUR_VIDEO_ID" allow="fullscreen" allowfullscreen></iframe>
-      -->
-      <div class="demo-video-empty">
-        <span class="demo-video-icon">&#9658;</span>
-        <p>Demo video goes here</p>
-        <p class="demo-video-hint">Paste your Loom embed in this block</p>
+    <div class="shot-frame shot-main">
+      <div class="shot-chrome"><span></span><span></span><span></span></div>
+      <div class="shot-body">
+        <!-- TODO: replace with a real screenshot of the PitchKiwi home screen, e.g. <img src="screenshots/home.png" alt="PitchKiwi home screen"> -->
+        <span class="shot-label">Home screen</span>
       </div>
     </div>
-    <div class="screens-row">
-      <!-- TODO: replace with real app screenshots -->
-      <div class="screen-placeholder">Home screen</div>
-      <div class="screen-placeholder">Prompt Mode</div>
-      <div class="screen-placeholder">Settings</div>
+    <div class="shots-row">
+      <div class="shot-frame">
+        <div class="shot-chrome"><span></span><span></span><span></span></div>
+        <div class="shot-body">
+          <!-- TODO: replace with a real screenshot of Prompt Mode -->
+          <span class="shot-label">Prompt Mode</span>
+        </div>
+      </div>
+      <div class="shot-frame">
+        <div class="shot-chrome"><span></span><span></span><span></span></div>
+        <div class="shot-body">
+          <!-- TODO: replace with a real screenshot of Settings -->
+          <span class="shot-label">Settings</span>
+        </div>
+      </div>
     </div>
   </section>
 
