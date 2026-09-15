@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PitchKiwi — Local voice dictation for vibe coders and developers</title>
-<meta name="description" content="Hold a key, speak, and clean text lands at your cursor. PitchKiwi is local voice dictation built for vibe coders and developers prompting AI agents. Speech recognition runs entirely on your Mac, so your voice never leaves it." />
+<meta name="description" content="Hold a key, speak, and clean text lands at your cursor. PitchKiwi is secure, local voice dictation built for vibe coders and developers prompting AI agents. Speech recognition runs entirely on your Mac, so your voice never leaves it." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://pitchkiwi.com/" />
 <meta name="theme-color" content="#14130E" />
@@ -14,12 +14,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="PitchKiwi" />
 <meta property="og:title" content="PitchKiwi — Local voice dictation for vibe coders and developers" />
-<meta property="og:description" content="Hold a key, speak, and clean text lands at your cursor. Speech recognition runs entirely on your Mac, so your voice never leaves it." />
+<meta property="og:description" content="Hold a key, speak, and clean text lands at your cursor. Secure, local voice dictation for developers: speech recognition runs entirely on your Mac, so your voice never leaves it." />
 <meta property="og:url" content="https://pitchkiwi.com/" />
 <meta property="og:image" content="https://pitchkiwi.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="PitchKiwi — Local voice dictation for vibe coders and developers" />
-<meta name="twitter:description" content="Hold a key, speak, and clean text lands at your cursor. Speech recognition runs entirely on your Mac, so your voice never leaves it." />
+<meta name="twitter:description" content="Hold a key, speak, and clean text lands at your cursor. Secure, local voice dictation for developers: speech recognition runs entirely on your Mac, so your voice never leaves it." />
 <meta name="twitter:image" content="https://pitchkiwi.com/og-image.png" />
 <!-- TODO: generate og-image.png (1200x630) and drop it at website/og-image.png — until then these tags point at a file that doesn't exist yet -->
 
@@ -112,6 +112,8 @@
   }
   .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
   .cta-note { font-size: 13.5px; color: var(--muted); margin-top: 14px; }
+  .trust-row { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .trust-row span { font-size: 13px; color: var(--muted); }
 
   .wave-card {
     background: var(--dark); border-radius: 20px; padding: 40px 32px;
@@ -323,6 +325,11 @@
         <a class="btn btn-ghost" href="#demo">Watch the demo</a>
       </div>
       <p class="cta-note">macOS 14+, Apple Silicon. $16.99 once, no subscription, no account.</p>
+      <div class="trust-row">
+        <span>🔒 100% local, nothing leaves your Mac</span>
+        <span>⌨️ Built for developers</span>
+        <span>🥝 No cloud, no account</span>
+      </div>
     </div>
     <div class="wave-card">
       <div class="wave-bars">
@@ -373,7 +380,7 @@
   <section class="wrap" id="solution">
     <div class="section-head">
       <h2>PitchKiwi does the transcription itself, on your Mac.</h2>
-      <p>Hold a hotkey, speak, release. The speech model runs locally. A deterministic cleanup pass fixes punctuation, casing, and developer terms. Nothing is uploaded, because there's nowhere for it to go.</p>
+      <p>Hold a hotkey, speak, release. The speech model runs locally. A deterministic cleanup pass fixes punctuation, casing, and developer terms built for how developers actually talk. Nothing is uploaded, because there's nowhere for it to go, which means your code, prompts, and internal plans stay exactly as secure as your own Mac.</p>
     </div>
 
     <div class="promptmode">
@@ -422,8 +429,8 @@ Done when: toggling works and the choice survives a restart</pre>
   <section class="darkband">
     <div class="wrap">
       <div class="section-head">
-        <h2>Four steps, all of them local.</h2>
-        <p>No step in this pipeline touches a network, unless you ask it to download a model.</p>
+        <h2>Four steps, all of them local, all of them secure.</h2>
+        <p>No step in this pipeline touches a network, unless you ask it to download a model. Nothing you say can leak, because it never leaves the machine.</p>
       </div>
       <div class="pipeline">
         <div class="step"><div class="num">hold</div><h4>Hold the key</h4><p>Fn, or any shortcut you set.</p></div>
