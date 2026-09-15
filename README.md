@@ -20,6 +20,13 @@ Hold a key, talk, and clean text lands at your cursor.
 
 Typing a detailed prompt is slow, so most people write short ones and get worse results. Talking is faster, but most dictation apps send your voice to a server before you see any text. PitchKiwi runs speech recognition **entirely on your Mac**. There's no account, no email, no password: buy once on Gumroad, activate with a license key, and nothing about your voice or what you dictate ever leaves your machine.
 
+## Requirements
+
+- A Mac with Apple Silicon (M1 or newer)
+- macOS 14 Sonoma or newer
+
+PitchKiwi is Mac only. There's no Windows or Linux version, and none planned.
+
 ## Features
 
 - Hold Fn to talk, release to insert. Works in any app: Claude Code, Cursor, Terminal, Slack, your browser.

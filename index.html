@@ -261,6 +261,9 @@
   .price-card.primary .amount { color: var(--green); }
   .price-card .amount .period { font-size: 15px; font-weight: 400; color: inherit; opacity: 0.6; margin-left: 6px; }
   .price-card h3 { font-size: 15px; font-weight: 500; margin: 0; opacity: 0.7; }
+  .price-card .requirement { font-size: 13px; margin: 0 0 20px; }
+  .price-card.primary .requirement { color: rgba(243,238,226,0.6); }
+  .price-card.secondary .requirement { color: var(--muted); }
   .price-card ul { list-style: none; margin: 22px 0 28px; padding: 0; display: grid; gap: 12px; }
   .price-card.primary ul { color: rgba(243,238,226,0.78); }
   .price-card.secondary ul { color: var(--muted); }
@@ -270,6 +273,11 @@
   }
   .price-card .btn { margin-top: auto; align-self: flex-start; }
   .pricing-footnote { margin-top: 18px; font-size: 13.5px; color: var(--muted); text-align: center; }
+
+  .about-note { max-width: 60ch; margin: 0 auto; padding: 8px 28px 48px; text-align: center; }
+  .about-note .about-label { font-size: 13.5px; color: var(--muted); margin: 0 0 10px; }
+  .about-note p.about-body { font-size: 14.5px; color: var(--muted); line-height: 1.65; margin: 10px 0 0; }
+  .about-note p.about-body:first-of-type { margin-top: 0; }
 
   footer { border-top: 1px solid var(--line); padding: 44px 0; }
   .foot-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
@@ -472,6 +480,7 @@ Done when: toggling works and the choice survives a restart</pre>
       <div class="price-card primary">
         <h3>PitchKiwi</h3>
         <div class="amount">$16.99<span class="period">one time</span></div>
+        <p class="requirement">macOS 14+, Apple Silicon required</p>
         <ul>
           <li>Download the signed macOS app straight away</li>
           <li>Local, on-device speech recognition, your voice never leaves your Mac</li>
@@ -483,6 +492,12 @@ Done when: toggling works and the choice survives a restart</pre>
       </div>
     </div>
     <p class="pricing-footnote">No account, ever. Buy on Gumroad, get a license key by email from Gumroad, paste it into the app. Nothing about your voice or what you dictate is ever stored, on your Mac or anywhere else.</p>
+  </section>
+
+  <section class="about-note">
+    <p class="about-label">A note on how this was made.</p>
+    <p class="about-body">PitchKiwi is a solo side project, built with the help of AI coding tools alongside my own decisions on what it does. It isn't run like a company with a support team, but I read everything and fix real bugs when they come up.</p>
+    <p class="about-body">PitchKiwi is Mac only, built for Apple Silicon. There's no Windows or Linux version, and none planned.</p>
   </section>
 
 </main>

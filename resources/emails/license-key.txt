@@ -1,0 +1,11 @@
+Subject: Your PitchKiwi license key
+
+Thanks for buying PitchKiwi. Here's your license key:
+
+{{LICENSE_KEY}}
+
+To get started, open https://pitchkiwi.com/get-started.html and follow the steps there to activate and start dictating.
+
+If anything doesn't work or your key won't activate, message me on X, @AhmedYsrrr (https://x.com/AhmedYsrrr), and I'll sort it out.
+
+— Ahmed
