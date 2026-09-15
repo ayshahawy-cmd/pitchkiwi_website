@@ -141,10 +141,26 @@
   }
   .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
   .cta-note { font-size: 13.5px; color: var(--muted); margin-top: 14px; }
-  .trust-row { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
-  .trust-row span { font-size: 13px; color: var(--muted); }
+  .trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .trust-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 13px; border-radius: 999px;
+    background: var(--white); border: 1px solid var(--line);
+    font-size: 13px; font-weight: 500; color: var(--ink);
+  }
+  .trust-badge svg { flex-shrink: 0; color: var(--green-ink); }
 
-  .hero-shot {
+  .hero-badge {
+    position: absolute; left: 16px; bottom: 16px;
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(20, 19, 14, 0.85); backdrop-filter: blur(6px);
+    color: var(--green); font-size: 12.5px; font-weight: 600;
+    padding: 8px 13px; border-radius: 999px;
+    border: 1px solid rgba(182, 255, 60, 0.3);
+  }
+
+  .hero-shot { position: relative; }
+  .hero-shot img {
     width: 100%; height: auto; display: block;
     border-radius: 20px; box-shadow: 0 24px 60px rgba(23, 21, 16, 0.16);
   }
@@ -192,6 +208,11 @@
   }
   .promptmode h3 { font-size: 24px; margin: 0 0 14px; }
   .promptmode p { color: var(--muted); font-size: 16px; margin: 0; }
+  .promptmode-points { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 10px; }
+  .promptmode-points li { font-size: 14.5px; color: var(--ink); padding-left: 20px; position: relative; }
+  .promptmode-points li::before {
+    content: '·'; position: absolute; left: 0; top: -3px; color: var(--green-ink); font-weight: 700; font-size: 22px; line-height: 1;
+  }
   .transcript-card {
     background: var(--dark); border-radius: 14px; overflow: hidden;
   }
@@ -350,14 +371,17 @@
         <a class="btn btn-primary" href="#pricing">Buy for $16.99</a>
         <a class="btn btn-ghost" href="#demo">See it in action</a>
       </div>
-      <p class="cta-note">macOS 14+, Apple Silicon. $16.99 once, no subscription, no account.</p>
+      <p class="cta-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon. $16.99 once, no subscription, no account.</p>
       <div class="trust-row">
-        <span>🔒 100% local, nothing leaves your Mac</span>
-        <span>⌨️ Built for developers</span>
-        <span>🥝 No cloud, no account</span>
+        <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>100% local, nothing leaves your Mac</span>
+        <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Built for developers</span>
+        <span class="trust-badge">🥝 No cloud, no account</span>
       </div>
     </div>
-    <img class="hero-shot" src="screenshots/app-window.png" alt="The PitchKiwi app window: sidebar with Home, Dictionary, Snippets, Styles, Transforms, and Insights, and the Home screen with microphone, Whisper model, and insertion all ready.">
+    <div class="hero-shot">
+      <img src="screenshots/app-window.png" alt="The PitchKiwi app window: sidebar with Home, Dictionary, Snippets, Styles, Transforms, and Insights, and the Home screen with microphone, Whisper model, and insertion all ready.">
+      <div class="hero-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>100% local</div>
+    </div>
   </div>
 
   <!-- SCREENSHOTS -->
@@ -410,8 +434,13 @@
 
     <div class="promptmode">
       <div>
-        <h3>Prompt Mode</h3>
-        <p>Ramble for a minute about what you want built. PitchKiwi turns it into a structured prompt: Goal, Context, Requirements, Done when. Paste it straight into Claude Code or any agent.</p>
+        <h3>A prompt, not just a transcript.</h3>
+        <p>Ramble for a minute about what you want built, half-formed thoughts and all. PitchKiwi turns the mess into Goal, Context, Requirements, and Done when, ready to paste into Claude Code or any agent.</p>
+        <ul class="promptmode-points">
+          <li>Only what you actually said. It never invents requirements you didn't give it.</li>
+          <li>Runs entirely on your Mac. The raw ramble never leaves it, let alone reaches a second model.</li>
+          <li>Paste-ready. No cleanup pass of your own before your agent can use it.</li>
+        </ul>
       </div>
       <div class="transcript-card">
         <div class="tc-head">
@@ -497,7 +526,7 @@ Done when: toggling works and the choice survives a restart</pre>
       <div class="price-card primary">
         <h3>PitchKiwi</h3>
         <div class="amount">$16.99<span class="period">one time</span></div>
-        <p class="requirement">macOS 14+, Apple Silicon required</p>
+        <p class="requirement"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon required</p>
         <ul>
           <li>Download the signed macOS app straight away</li>
           <li>Local, on-device speech recognition, your voice never leaves your Mac</li>
