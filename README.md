@@ -10,7 +10,7 @@ Hold a key, talk, and clean text lands at your cursor.
 [![macOS 14+](https://img.shields.io/badge/macOS-14%2B-171510.svg?logo=apple)](#requirements)
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-M1%2B-171510.svg)](#requirements)
 
-[Buy for $19](#pricing) · [Docs](https://pitchkiwi.com/docs.html) · [Privacy & Terms](https://pitchkiwi.com/legal.html)
+[Buy me a pizza 🍕 — $19](#pricing) · [Docs](https://pitchkiwi.com/docs.html) · [Privacy & Terms](https://pitchkiwi.com/legal.html)
 
 </div>
 
@@ -46,7 +46,7 @@ PitchKiwi is Mac only. There's no Windows or Linux version, and none planned.
 | Activation | A license key from Gumroad, no account needed |
 
 <!-- TODO: replace with the real Gumroad product URL -->
-**[Buy for $19 →](#)**
+**[Buy me a pizza 🍕 — $19 →](#)**
 
 ## Install
 

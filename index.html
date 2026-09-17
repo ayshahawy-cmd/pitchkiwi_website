@@ -267,6 +267,27 @@
   table.ptable td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 14px; width: 34%; }
   .privacy-note { margin-top: 20px; font-size: 14.5px; color: var(--muted); }
 
+  /* Horme */
+  .horme-card {
+    background: var(--white); border: 1px solid var(--line); border-radius: 20px;
+    padding: 40px; max-width: 640px;
+  }
+  .horme-card > p { font-size: 16px; color: var(--muted); margin: 0; }
+  .horme-card p.horme-line { font-weight: 600; font-size: 17.5px; color: var(--ink); margin: 18px 0 28px; }
+  .horme-flow { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin-bottom: 22px; }
+  .horme-node {
+    font-family: 'JetBrains Mono', monospace; font-size: 13.5px;
+    background: var(--beige); border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 14px;
+  }
+  .horme-arrow { color: var(--muted); font-size: 14px; padding: 2px 0 2px 16px; }
+  .horme-annotation {
+    margin: 10px 0 0 2px; font-size: 13px; color: var(--muted); font-style: italic;
+    padding-left: 14px; border-left: 2px solid var(--green);
+  }
+  .horme-card p.horme-note { font-size: 13.5px; color: var(--muted); margin: 0 0 8px; }
+  .horme-card p.horme-beta { font-size: 13.5px; color: var(--muted); margin: 0; }
+
   /* Pricing */
   .pricing-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: stretch; }
   .pricing-grid.single { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
@@ -290,6 +311,7 @@
     content: '·'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 20px; line-height: 1;
   }
   .price-card .btn { margin-top: auto; align-self: flex-start; }
+  .horme-member-note { font-size: 13px; color: rgba(243,238,226,0.6); margin: 14px 0 0; }
   .pricing-footnote { margin-top: 18px; font-size: 13.5px; color: var(--muted); text-align: center; }
 
   .about-note { max-width: 60ch; margin: 0 auto; padding: 8px 28px 48px; text-align: center; }
@@ -368,10 +390,10 @@
       <h1>Speak into any app on your Mac. Your voice never leaves it.</h1>
       <p class="lead">Hold a key, talk, and clean text lands wherever your cursor is: Claude Code, Cursor, Terminal, Slack, your browser. Speech recognition runs entirely on your Mac, so what you say out loud stays local and secure.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#pricing">Buy for $19</a>
+        <a class="btn btn-primary" href="#pricing">Buy me a pizza 🍕 — $19</a>
         <a class="btn btn-ghost" href="#demo">See it in action</a>
       </div>
-      <p class="cta-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon. $19 once, no subscription, no account.</p>
+      <p class="cta-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon. $19 once. No subscription. No account.</p>
       <div class="trust-row">
         <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>100% local, nothing leaves your Mac</span>
         <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Built for developers</span>
@@ -516,11 +538,36 @@ Done when: toggling works and the choice survives a restart</pre>
     </div>
   </section>
 
+  <!-- HORME -->
+  <section class="wrap" id="horme">
+    <div class="section-head">
+      <div class="hero-eyebrow"><span class="dot"></span>Part of something bigger</div>
+      <h2>PitchKiwi is part of the Horme ecosystem.</h2>
+      <p>PitchKiwi helps you get the idea out of your head. Horme is being built to take that intent and coordinate the coding agents that execute it.</p>
+    </div>
+    <div class="horme-card">
+      <p>PitchKiwi gives you fast, private voice input. Horme gives you one place to coordinate agents like Claude Code and Codex.</p>
+      <p class="horme-line">Speak what you want. Let your agents do the work.</p>
+      <div class="horme-flow">
+        <div class="horme-node">You</div>
+        <div class="horme-arrow">↓</div>
+        <div class="horme-node">PitchKiwi</div>
+        <div class="horme-arrow">↓</div>
+        <div class="horme-node">Your prompt</div>
+        <div class="horme-arrow">↓</div>
+        <div class="horme-node">Claude Code / Codex</div>
+        <div class="horme-annotation">Horme coordinates the agents</div>
+      </div>
+      <p class="horme-note">PitchKiwi still inserts your words as text into whatever app is active, the same as it does today. Using PitchKiwi never sends your voice or transcript to Horme; PitchKiwi's speech recognition and cleanup stay entirely local, whether or not you use Horme.</p>
+      <p class="horme-beta">PitchKiwi is a fully standalone Mac app and doesn't require Horme to work. Horme is currently in private beta.</p>
+    </div>
+  </section>
+
   <!-- PRICING -->
   <section class="wrap" id="pricing">
     <div class="section-head">
-      <h2>$19 one-time. Buy me a pizza 🍕. Keep it forever.</h2>
-      <p>One plan: a signed macOS app, yours for good, with speech recognition that runs entirely on your Mac.</p>
+      <h2>Buy me a pizza 🍕</h2>
+      <p>$19 once. One plan. One payment. No subscription.</p>
     </div>
     <div class="pricing-grid single">
       <div class="price-card primary">
@@ -528,13 +575,15 @@ Done when: toggling works and the choice survives a restart</pre>
         <div class="amount">$19<span class="period">one time</span></div>
         <p class="requirement"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon required</p>
         <ul>
-          <li>Download the signed macOS app straight away</li>
-          <li>Local, on-device speech recognition, your voice never leaves your Mac</li>
-          <li>Pay once, yours forever, no subscription</li>
-          <li>Activate with a license key, no account required</li>
+          <li>Signed macOS app, download and go</li>
+          <li>Local, on-device speech recognition — your voice never leaves your Mac</li>
+          <li>Prompt Mode for developer workflows</li>
+          <li>No PitchKiwi account required</li>
+          <li>Lifetime license, pay once</li>
         </ul>
         <!-- TODO: replace with the real Gumroad product URL -->
-        <a class="btn btn-on-dark" href="#">Buy for $19</a>
+        <a class="btn btn-on-dark" href="#">Buy me a pizza 🍕 — $19</a>
+        <p class="horme-member-note">Already using Horme? PitchKiwi will be included for Horme members when Horme subscriptions launch.</p>
       </div>
     </div>
     <p class="pricing-footnote">No account, ever. Buy on Gumroad, get a license key by email from Gumroad, paste it into the app. Nothing about your voice or what you dictate is ever stored, on your Mac or anywhere else.</p>

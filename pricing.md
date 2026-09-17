@@ -1,18 +1,21 @@
 # Pricing
 
 **Section headline:**
-$19 one-time. Buy me a pizza 🍕. Keep it forever.
+Buy me a pizza 🍕
 
 **Body:**
-One plan: a signed macOS app, yours for good, with speech recognition that runs entirely on your Mac.
+$19 once. One plan. One payment. No subscription.
 
 ## Single plan, one card
 
 **PitchKiwi — $19 one time**
-- Download the signed macOS app straight away
-- Local, on-device speech recognition, your voice never leaves your Mac
-- Pay once, yours forever, no subscription
-- Activate with a license key, no account required
-- CTA: Buy for $19
+- Signed macOS app, download and go
+- Local, on-device speech recognition — your voice never leaves your Mac
+- Prompt Mode for developer workflows
+- No PitchKiwi account required
+- Lifetime license, pay once
+- CTA: Buy me a pizza 🍕 — $19
+
+**Below the CTA:** Already using Horme? PitchKiwi will be included for Horme members when Horme subscriptions launch.
 
 **Small note under the card:** No account, ever. Buy on Gumroad, get a license key by email from Gumroad, paste it into the app. Nothing about your voice or what you dictate is ever stored, on your Mac or anywhere else.

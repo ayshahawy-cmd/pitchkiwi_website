@@ -10,8 +10,8 @@ Your voice never leaves it.
 **Subcopy:**
 Hold a key, talk, and clean text lands wherever your cursor is: Claude Code, Cursor, Terminal, Slack, your browser. Speech recognition runs entirely on your Mac, so what you say out loud stays local and secure.
 
-**Primary CTA:** Buy for $19
-**Secondary CTA:** Watch the demo
+**Primary CTA:** Buy me a pizza 🍕 — $19
+**Secondary CTA:** See it in action
 
 **Microcopy under the buttons:**
-macOS 14+, Apple Silicon. $19 once, no subscription, no account.
+macOS 14+, Apple Silicon. $19 once. No subscription. No account.
