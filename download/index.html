@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Pitch Kiwi — macOS beta</title>
+<meta name="description" content="Download and install the Pitch Kiwi beta for Apple Silicon Macs running macOS 14 or later.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#14130E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --beige:#F3EEE2; --white:#FBF9F3; --ink:#171510; --muted:#6E6858; --green:#B6FF3C; --green-ink:#1F2E06; --dark:#14130E; --line:rgba(23,21,16,.12); }
+  * { box-sizing: border-box; }
+  html, body { overflow-x:hidden; }
+  body { margin:0; min-height:100vh; background:var(--beige); color:var(--ink); font-family:'Instrument Sans',-apple-system,BlinkMacSystemFont,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+  .shell { width:min(920px,calc(100% - 40px)); margin:0 auto; padding:28px 0 72px; }
+  nav { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .brand { display:flex; align-items:center; gap:9px; text-decoration:none; font-size:17px; font-weight:600; }
+  .back { color:var(--muted); font-size:14px; text-decoration:none; }
+  .hero { padding:76px 0 38px; max-width:700px; }
+  .eyebrow { display:inline-flex; align-items:center; gap:8px; font:500 13px 'JetBrains Mono',monospace; color:var(--muted); }
+  .eyebrow::before { content:''; width:7px; height:7px; background:var(--green); border-radius:50%; }
+  h1 { margin:18px 0 14px; font-size:clamp(42px,8vw,68px); line-height:1; letter-spacing:-.035em; font-weight:600; }
+  .lead { margin:0; color:var(--muted); font-size:19px; }
+  .download-card { position:relative; min-width:0; overflow:hidden; background:var(--dark); color:var(--beige); border-radius:22px; padding:36px; box-shadow:0 24px 70px rgba(23,21,16,.13); }
+  .download-card::after { content:''; position:absolute; width:300px; height:300px; right:-120px; top:-150px; background:radial-gradient(circle,rgba(182,255,60,.26),transparent 68%); pointer-events:none; }
+  .badge { display:inline-flex; padding:7px 10px; border:1px solid rgba(182,255,60,.32); border-radius:999px; color:var(--green); font:500 12px 'JetBrains Mono',monospace; }
+  .download-card h2 { margin:22px 0 8px; font-size:26px; }
+  .download-card p { margin:0; color:rgba(243,238,226,.68); }
+  .download-action { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:26px; }
+  .button { display:inline-flex; align-items:center; justify-content:center; border-radius:10px; padding:12px 20px; background:var(--green); color:var(--green-ink); font-weight:700; text-decoration:none; }
+  .system { font:400 12px 'JetBrains Mono',monospace; color:rgba(243,238,226,.55); }
+  .steps { padding:54px 0 18px; }
+  .steps h2 { margin:0 0 24px; font-size:30px; }
+  .step-list { display:grid; gap:12px; }
+  .step { display:grid; grid-template-columns:44px minmax(0,1fr); gap:16px; padding:22px; background:var(--white); border:1px solid var(--line); border-radius:14px; }
+  .number { display:grid; place-items:center; width:36px; height:36px; border-radius:9px; background:var(--dark); color:var(--green); font:600 13px 'JetBrains Mono',monospace; }
+  .step h3 { margin:2px 0 5px; font-size:17px; }
+  .step p { margin:0; color:var(--muted); line-height:1.55; }
+  .privacy { margin-top:28px; padding:22px; border-left:3px solid var(--green); background:rgba(251,249,243,.55); color:var(--muted); line-height:1.6; }
+  .privacy strong { color:var(--ink); }
+  footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; color:var(--muted); font-size:13px; }
+  footer a { text-decoration:none; }
+  :focus-visible { outline:2px solid var(--green); outline-offset:3px; }
+  @media (max-width:600px) { .shell{width:calc(100% - 28px)} .hero{padding-top:52px} .download-card{padding:26px} .button{width:100%} .step{grid-template-columns:36px minmax(0,1fr);padding:18px} }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <a class="brand" href="/"><span aria-hidden="true">🥝</span> PitchKiwi</a>
+      <a class="back" href="/">Back to website</a>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">BETA ACCESS</div>
+        <h1>Install Pitch Kiwi</h1>
+        <p class="lead">You're in. Here's how to get Pitch Kiwi running.</p>
+      </section>
+
+      <section class="download-card" aria-labelledby="download-title">
+        <span class="badge">FREE WHILE IN BETA</span>
+        <h2 id="download-title">PitchKiwi for Mac</h2>
+        <p>Local voice dictation built for developers, prompts, and coding agents.</p>
+        <div class="download-action">
+          <a class="button" href="/api/download">Download for Mac</a>
+          <span class="system">macOS 14+ · Apple Silicon</span>
+        </div>
+      </section>
+
+      <section class="steps" aria-labelledby="steps-title">
+        <h2 id="steps-title">Four quick steps</h2>
+        <div class="step-list">
+          <article class="step">
+            <span class="number">01</span>
+            <div><h3>Download and unzip</h3><p>Download the PitchKiwi ZIP, open it, then drag <strong>PitchKiwi.app</strong> into your Applications folder.</p></div>
+          </article>
+          <article class="step">
+            <span class="number">02</span>
+            <div><h3>Open the beta safely</h3><p>In Applications, Control-click PitchKiwi and choose <strong>Open</strong>, then confirm. This beta is not notarized yet; you do not need to disable Gatekeeper.</p></div>
+          </article>
+          <article class="step">
+            <span class="number">03</span>
+            <div><h3>Grant two permissions</h3><p>Follow onboarding to allow Microphone access for speech and Accessibility access so PitchKiwi can insert text at your cursor.</p></div>
+          </article>
+          <article class="step">
+            <span class="number">04</span>
+            <div><h3>Start talking</h3><p>Hold <strong>Fn</strong>, speak, and release to insert. Double-press Fn for hands-free dictation, then press it again to stop.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="privacy"><strong>Your speech stays local.</strong> PitchKiwi runs transcription and cleanup on your Mac. Your microphone audio and dictated text are not sent to PitchKiwi's website.</aside>
+    </main>
+
+    <footer>
+      <span>PitchKiwi beta for macOS</span>
+      <span><a href="/docs.html">Docs</a> · <a href="/legal.html#privacy">Privacy</a></span>
+    </footer>
+  </div>
+</body>
+</html>

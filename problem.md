@@ -8,5 +8,5 @@ Typing a detailed prompt is slow, so most people write short ones and get worse 
 
 **Three short supporting lines (not numbered, not cards, just a tight list):**
 - Cloud transcription means your audio leaves your Mac before you see any text.
-- A subscription for dictation runs $120 to $180 a year, for something your own laptop can do.
+- Generic dictation cleans up prose, not the syntax, structure, and terminology developers use.
 - Generic dictation mangles the exact things developers say all day: `useEffect`, `--force`, file paths, casing.

@@ -33,15 +33,14 @@ Done when: toggling works and the choice survives a restart
 - **Terminal-safe** — never presses Return for you. Dictated commands land, they don't run.
 - **Personal dictionary** — teach it your project's names once, stop watching it misspell them.
 
-## Privacy (small real table)
+## Privacy
 
-**Section headline:** Here's everywhere it can connect, and that's the whole list.
+**Section headline:** Your voice stays on your Mac.
 
-| Destination | When |
+| Data | Handling |
 |---|---|
-| Hugging Face | Only when you click Download on a speech model |
-| Update server | Only if you turn on update checks |
-| Gumroad license check | Once at activation, then roughly every 7 days |
-| Your voice, ever | Never. Speech recognition runs entirely on your Mac |
+| Beta download email | Used for PitchKiwi updates and relevant product announcements |
+| Microphone audio | Processed locally and not uploaded by PitchKiwi |
+| Dictated text | Processed locally and inserted at your cursor |
 
-Every connection is listed in Settings, and there's an Offline switch that blocks all of it.
+The website email is separate from the app's local speech pipeline.

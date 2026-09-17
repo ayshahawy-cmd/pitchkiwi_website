@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PitchKiwi — Local voice dictation for vibe coders and developers</title>
-<meta name="description" content="Hold a key, speak, and clean text lands at your cursor. PitchKiwi is secure, local voice dictation built for vibe coders and developers prompting AI agents. Speech recognition runs entirely on your Mac, so your voice never leaves it." />
+<meta name="description" content="PitchKiwi is local voice dictation for vibe coders and developers prompting AI agents. Free while in beta. Available for Apple Silicon Macs running macOS 14 or later." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://pitchkiwi.com/" />
 <meta name="theme-color" content="#14130E" />
@@ -14,12 +14,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="PitchKiwi" />
 <meta property="og:title" content="PitchKiwi — Local voice dictation for vibe coders and developers" />
-<meta property="og:description" content="Hold a key, speak, and clean text lands at your cursor. Secure, local voice dictation for developers: speech recognition runs entirely on your Mac, so your voice never leaves it." />
+<meta property="og:description" content="Local voice dictation for developers and vibe coders. Free while in beta for Apple Silicon Macs." />
 <meta property="og:url" content="https://pitchkiwi.com/" />
 <meta property="og:image" content="https://pitchkiwi.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="PitchKiwi — Local voice dictation for vibe coders and developers" />
-<meta name="twitter:description" content="Hold a key, speak, and clean text lands at your cursor. Secure, local voice dictation for developers: speech recognition runs entirely on your Mac, so your voice never leaves it." />
+<meta name="twitter:description" content="Local voice dictation for developers and vibe coders. Free while in beta for Apple Silicon Macs." />
 <meta name="twitter:image" content="https://pitchkiwi.com/og-image.png" />
 <!-- TODO: generate og-image.png (1200x630) and drop it at website/og-image.png — until then these tags point at a file that doesn't exist yet -->
 
@@ -288,7 +288,7 @@
   .horme-card p.horme-note { font-size: 13.5px; color: var(--muted); margin: 0 0 8px; }
   .horme-card p.horme-beta { font-size: 13.5px; color: var(--muted); margin: 0; }
 
-  /* Pricing */
+  /* Beta download */
   .pricing-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: stretch; }
   .pricing-grid.single { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
   .price-card {
@@ -313,6 +313,18 @@
   .price-card .btn { margin-top: auto; align-self: flex-start; }
   .horme-member-note { font-size: 13px; color: rgba(243,238,226,0.6); margin: 14px 0 0; }
   .pricing-footnote { margin-top: 18px; font-size: 13.5px; color: var(--muted); text-align: center; }
+  .beta-form { display: grid; gap: 12px; margin-top: 24px; }
+  .beta-form label { font-size: 13px; color: rgba(243,238,226,0.72); }
+  .beta-form-row { display: flex; gap: 10px; }
+  .beta-form input {
+    min-width: 0; flex: 1; border: 1px solid rgba(243,238,226,0.24);
+    border-radius: 10px; padding: 12px 14px; color: var(--dark-white);
+    background: rgba(243,238,226,0.08); font: inherit;
+  }
+  .beta-form input::placeholder { color: rgba(243,238,226,0.46); }
+  .beta-form button:disabled { cursor: wait; opacity: 0.7; }
+  .beta-privacy { margin: 0; color: rgba(243,238,226,0.56); font-size: 12.5px; line-height: 1.5; }
+  .beta-error { min-height: 1.4em; margin: 0; color: #ffd1c7; font-size: 13px; }
 
   .about-note { max-width: 60ch; margin: 0 auto; padding: 8px 28px 48px; text-align: center; }
   .about-note p.about-body { font-size: 14.5px; color: var(--muted); line-height: 1.65; margin: 10px 0 0; }
@@ -344,6 +356,8 @@
   @media (max-width: 480px) {
     .features-row { grid-template-columns: 1fr; }
     .wrap { padding: 0 20px; }
+    .beta-form-row { flex-direction: column; }
+    .beta-form-row .btn { width: 100%; }
   }
 
   /* Scroll reveal: only for visual "proof" moments (screenshots, the step
@@ -374,9 +388,9 @@
     </a>
     <div class="navlinks">
       <a class="plain" href="#solution">Features</a>
-      <a class="plain" href="#pricing">Pricing</a>
+      <a class="plain" href="#beta">Beta</a>
       <a class="plain" href="docs.html">Docs</a>
-      <a class="btn btn-primary" href="#pricing">Download</a>
+      <a class="btn btn-primary" href="#beta">Download beta</a>
     </div>
   </nav>
 </header>
@@ -390,14 +404,14 @@
       <h1>Speak into any app on your Mac. Your voice never leaves it.</h1>
       <p class="lead">Hold a key, talk, and clean text lands wherever your cursor is: Claude Code, Cursor, Terminal, Slack, your browser. Speech recognition runs entirely on your Mac, so what you say out loud stays local and secure.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#pricing">Buy me a pizza 🍕 — $19</a>
+        <a class="btn btn-primary" href="#beta">Download beta</a>
         <a class="btn btn-ghost" href="#demo">See it in action</a>
       </div>
-      <p class="cta-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon. $19 once. No subscription. No account.</p>
+      <p class="cta-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>Free while in beta. No credit card required. macOS 14+, Apple Silicon.</p>
       <div class="trust-row">
         <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>100% local, nothing leaves your Mac</span>
         <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Built for developers</span>
-        <span class="trust-badge">🥝 No cloud, no account</span>
+        <span class="trust-badge">🥝 No cloud transcription</span>
       </div>
     </div>
     <div class="hero-shot">
@@ -442,7 +456,7 @@
     </div>
     <div class="problem-list">
       <div class="row"><span class="mark">01</span><p>Cloud transcription means your audio leaves your Mac before you see any text.</p></div>
-      <div class="row"><span class="mark">02</span><p>A subscription for dictation runs $120 to $180 a year, for something your own laptop can do.</p></div>
+      <div class="row"><span class="mark">02</span><p>Generic dictation cleans up prose, not the syntax, structure, and terminology developers use.</p></div>
       <div class="row"><span class="mark">03</span><p>Generic dictation mangles the exact things developers say all day: <code>useEffect</code>, <code>--force</code>, file paths, casing.</p></div>
     </div>
   </section>
@@ -506,10 +520,10 @@ Done when: toggling works and the choice survives a restart</pre>
     <div class="wrap">
       <div class="section-head">
         <h2>Four steps, all of them local, all of them secure.</h2>
-        <p>No step in this pipeline touches a network, unless you ask it to download a model. Nothing you say can leak, because it never leaves the machine.</p>
+        <p>Your microphone audio, transcription, cleanup, and insertion stay on your Mac.</p>
       </div>
       <div class="pipeline">
-        <div class="step reveal" style="--reveal-delay: 0ms"><div class="num">hold</div><h4>Hold the key</h4><p>Fn, or any shortcut you set.</p></div>
+        <div class="step reveal" style="--reveal-delay: 0ms"><div class="num">hold</div><h4>Hold the key</h4><p>Hold Fn while you speak.</p></div>
         <div class="arrow">→</div>
         <div class="step reveal" style="--reveal-delay: 70ms"><div class="num">listen</div><h4>On-device model</h4><p>Speech turns to text on your Mac.</p></div>
         <div class="arrow">→</div>
@@ -523,18 +537,18 @@ Done when: toggling works and the choice survives a restart</pre>
   <!-- PRIVACY -->
   <section class="wrap" id="privacy">
     <div class="section-head">
-      <h2>Here's everywhere it can connect, and that's the whole list.</h2>
-      <p>Every connection is listed in Settings, and there's an Offline switch that blocks all of it. Your voice and everything you dictate is never one of these connections.</p>
+      <h2>Your voice stays on your Mac.</h2>
+      <p>The app processes speech locally. The website only handles the email you provide to enter the beta download flow.</p>
     </div>
     <div class="privacy-table">
       <table class="ptable">
         <tr><th>Destination</th><th>When</th></tr>
-        <tr><td>huggingface.co</td><td>Only when you click Download on a speech model</td></tr>
-        <tr><td>Update server</td><td>Only if you enable automatic update checks</td></tr>
-        <tr><td>Gumroad license check</td><td>Once when you activate, then roughly every 7 days, to confirm your license key</td></tr>
+        <tr><td>Beta download email</td><td>Used for PitchKiwi updates and relevant product announcements, as disclosed beside the form</td></tr>
+        <tr><td>Microphone audio</td><td>Processed locally by the app and not uploaded by PitchKiwi</td></tr>
+        <tr><td>Transcripts</td><td>Processed locally and inserted at your cursor</td></tr>
         <tr><td>Your voice, ever</td><td>Never. Speech recognition happens entirely on your Mac</td></tr>
       </table>
-      <p class="privacy-note">There's no PitchKiwi account, no email, no password, no server of ours. The only network call the app makes on its own is a license check against Gumroad: your product ID and license key, nothing else. We never see, store, or transmit your voice, transcripts, or dictation history. See the <a href="legal.html#privacy">full privacy policy</a>.</p>
+      <p class="privacy-note">The beta form asks only for an email address—no account, password, payment information, or verification. We do not receive your voice, transcripts, or dictated text. See the <a href="legal.html#privacy">full privacy policy</a>.</p>
     </div>
   </section>
 
@@ -563,30 +577,35 @@ Done when: toggling works and the choice survives a restart</pre>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="wrap" id="pricing">
+  <!-- BETA DOWNLOAD -->
+  <section class="wrap" id="beta">
     <div class="section-head">
-      <h2>Buy me a pizza 🍕</h2>
-      <p>$19 once. One plan. One payment. No subscription.</p>
+      <h2>Get Pitch Kiwi</h2>
+      <p>Free while in beta.</p>
     </div>
     <div class="pricing-grid single">
       <div class="price-card primary">
-        <h3>PitchKiwi</h3>
-        <div class="amount">$19<span class="period">one time</span></div>
+        <h3>PitchKiwi beta</h3>
+        <div class="amount">Free<span class="period">while in beta</span></div>
         <p class="requirement"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon required</p>
         <ul>
-          <li>Signed macOS app, download and go</li>
+          <li>Download the macOS beta immediately</li>
           <li>Local, on-device speech recognition — your voice never leaves your Mac</li>
           <li>Prompt Mode for developer workflows</li>
-          <li>No PitchKiwi account required</li>
-          <li>Lifetime license, pay once</li>
+          <li>No account, password, or credit card</li>
         </ul>
-        <!-- TODO: replace with the real Gumroad product URL -->
-        <a class="btn btn-on-dark" href="#">Buy me a pizza 🍕 — $19</a>
-        <p class="horme-member-note">Already using Horme? PitchKiwi will be included for Horme members when Horme subscriptions launch.</p>
+        <form class="beta-form" data-beta-form action="/api/beta-downloads" method="post" novalidate>
+          <label for="beta-email">Email</label>
+          <div class="beta-form-row">
+            <input id="beta-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" required>
+            <button class="btn btn-on-dark" type="submit">Download beta</button>
+          </div>
+          <p class="beta-privacy">We'll only use your email for Pitch Kiwi updates and relevant product announcements.</p>
+          <p class="beta-error" data-beta-error role="alert" aria-live="polite"></p>
+        </form>
       </div>
     </div>
-    <p class="pricing-footnote">No account, ever. Buy on Gumroad, get a license key by email from Gumroad, paste it into the app. Nothing about your voice or what you dictate is ever stored, on your Mac or anywhere else.</p>
+    <p class="pricing-footnote">One field. Then straight to the download and installation steps.</p>
   </section>
 
   <section class="about-note">
@@ -631,6 +650,7 @@ Done when: toggling works and the choice survives a restart</pre>
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 })();
 </script>
+<script src="/assets/beta-download.js" defer></script>
 
 </body>
 </html>

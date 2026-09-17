@@ -10,7 +10,7 @@ Hold a key, talk, and clean text lands at your cursor.
 [![macOS 14+](https://img.shields.io/badge/macOS-14%2B-171510.svg?logo=apple)](#requirements)
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-M1%2B-171510.svg)](#requirements)
 
-[Buy me a pizza 🍕 — $19](#pricing) · [Docs](https://pitchkiwi.com/docs.html) · [Privacy & Terms](https://pitchkiwi.com/legal.html)
+[Download beta](https://pitchkiwi.com/#beta) · [Docs](https://pitchkiwi.com/docs.html) · [Privacy & Terms](https://pitchkiwi.com/legal.html)
 
 </div>
 
@@ -18,7 +18,7 @@ Hold a key, talk, and clean text lands at your cursor.
 
 ## Why PitchKiwi
 
-Typing a detailed prompt is slow, so most people write short ones and get worse results. Talking is faster, but most dictation apps send your voice to a server before you see any text. PitchKiwi runs speech recognition **entirely on your Mac**. There's no account, no email, no password: buy once on Gumroad, activate with a license key, and nothing about your voice or what you dictate ever leaves your machine.
+Typing a detailed prompt is slow, so most people write short ones and get worse results. Talking is faster, but most dictation apps send your voice to a server before you see any text. PitchKiwi runs speech recognition **entirely on your Mac**. The beta download asks only for an email—no account, password, verification, or payment.
 
 ## Requirements
 
@@ -34,42 +34,38 @@ PitchKiwi is Mac only. There's no Windows or Linux version, and none planned.
 - Dev-aware dictation: "camel case user id" becomes `userId`, "dash dash force" becomes `--force`.
 - Terminal-safe: never presses Return for you.
 - Personal dictionary, snippets, spoken punctuation.
-- History encrypted on disk, zero telemetry, a visible network log, and an Offline switch.
+- Local transcription and cleanup; voice and dictated text are not uploaded by PitchKiwi.
 
-## Pricing
+## Beta access
 
-| | PitchKiwi |
-|---|---|
-| Price | **$19, one time** |
-| What you get | A signed, ready-to-install macOS app |
-| Includes | Yours forever, no subscription |
-| Activation | A license key from Gumroad, no account needed |
+PitchKiwi is free while in beta. No credit card required.
 
-<!-- TODO: replace with the real Gumroad product URL -->
-**[Buy me a pizza 🍕 — $19 →](#)**
+**[Download beta →](https://pitchkiwi.com/#beta)**
 
 ## Install
 
-1. Buy on Gumroad and download the `.dmg`. Gumroad emails you a license key.
-2. Drag PitchKiwi into Applications.
-3. First launch: right-click PitchKiwi and choose **Open**, since it isn't notarized with a paid Apple developer account yet.
-4. Grant Microphone and Accessibility when asked, then paste your license key to activate.
+1. Enter your email on the website and continue directly to the download page.
+2. Download the ZIP, unzip it, and drag PitchKiwi into Applications.
+3. First launch: Control-click PitchKiwi and choose **Open**, since the beta isn't notarized yet.
+4. Grant Microphone and Accessibility when asked.
 
 Full walkthrough, troubleshooting, and hotkey setup: see the [docs](https://pitchkiwi.com/docs.html).
 
 ## Privacy
 
-| Destination | When |
-|---|---|
-| Hugging Face | Only when you click Download on a speech model |
-| Update server | Only if you turn on update checks |
-| Gumroad license check | Once at activation, then roughly every 7 days |
-| Your voice | Never. Speech recognition runs entirely on your Mac |
-
-There's no PitchKiwi account, no email, no password, no server of ours. Every request is visible in Settings > Network Log, and an Offline switch blocks all but the license check. Full policy: [pitchkiwi.com/legal.html](https://pitchkiwi.com/legal.html#privacy).
+The website asks for one email for PitchKiwi updates and relevant product announcements. The app's speech recognition and cleanup run locally; PitchKiwi does not upload your microphone audio or dictated text. Full policy: [pitchkiwi.com/legal.html](https://pitchkiwi.com/legal.html#privacy).
 
 ## License
 
-PitchKiwi is closed-source, proprietary software. Buying a license grants a personal, non-transferable license to run the app, unlocked with your Gumroad license key; see the [Terms of Use](https://pitchkiwi.com/legal.html#terms) for details.
+See the [Terms of Use](https://pitchkiwi.com/legal.html#terms) for beta usage terms.
+
+## Website beta flow
+
+The static site uses two small Vercel functions:
+
+- `POST /api/beta-downloads` validates the one-field email form and redirects to `/download/`. Storage is intentionally a no-op placeholder until the Excel connection is added; addresses are not logged, persisted, or transmitted.
+- `GET /api/download` redirects to the public ZIP configured in `PITCHKIWI_BETA_DOWNLOAD_URL`.
+
+Copy `.env.example` to your local environment and set the download URL in Vercel before publishing. Run `npm test` and `npm run build` to validate the flow and public copy.
 
 © 2026 Ahmed Yasser ([@AhmedYsrrr](https://x.com/AhmedYsrrr)). All rights reserved.

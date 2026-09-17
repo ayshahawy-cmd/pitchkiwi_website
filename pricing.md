@@ -1,21 +1,21 @@
-# Pricing
+# Beta download
 
 **Section headline:**
-Buy me a pizza 🍕
+Get Pitch Kiwi
 
 **Body:**
-$19 once. One plan. One payment. No subscription.
+Free while in beta.
 
-## Single plan, one card
+## One-field download card
 
-**PitchKiwi — $19 one time**
-- Signed macOS app, download and go
+**PitchKiwi beta**
+- Download the macOS beta immediately
 - Local, on-device speech recognition — your voice never leaves your Mac
 - Prompt Mode for developer workflows
-- No PitchKiwi account required
-- Lifetime license, pay once
-- CTA: Buy me a pizza 🍕 — $19
+- No account, password, verification, or credit card
+- Email field: `you@example.com`
+- CTA: Download beta
 
-**Below the CTA:** Already using Horme? PitchKiwi will be included for Horme members when Horme subscriptions launch.
+**Privacy copy:** We'll only use your email for Pitch Kiwi updates and relevant product announcements.
 
-**Small note under the card:** No account, ever. Buy on Gumroad, get a license key by email from Gumroad, paste it into the app. Nothing about your voice or what you dictate is ever stored, on your Mac or anywhere else.
+**Small note under the card:** One field. Then straight to the download and installation steps.
