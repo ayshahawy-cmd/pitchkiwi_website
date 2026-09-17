@@ -10,7 +10,7 @@ Hold a key, talk, and clean text lands at your cursor.
 [![macOS 14+](https://img.shields.io/badge/macOS-14%2B-171510.svg?logo=apple)](#requirements)
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-M1%2B-171510.svg)](#requirements)
 
-[Buy for $16.99](#pricing) · [Docs](https://pitchkiwi.com/docs.html) · [Privacy & Terms](https://pitchkiwi.com/legal.html)
+[Buy for $19](#pricing) · [Docs](https://pitchkiwi.com/docs.html) · [Privacy & Terms](https://pitchkiwi.com/legal.html)
 
 </div>
 
@@ -40,13 +40,13 @@ PitchKiwi is Mac only. There's no Windows or Linux version, and none planned.
 
 | | PitchKiwi |
 |---|---|
-| Price | **$16.99, one time** |
+| Price | **$19, one time** |
 | What you get | A signed, ready-to-install macOS app |
 | Includes | Yours forever, no subscription |
 | Activation | A license key from Gumroad, no account needed |
 
 <!-- TODO: replace with the real Gumroad product URL -->
-**[Buy for $16.99 →](#)**
+**[Buy for $19 →](#)**
 
 ## Install
 
