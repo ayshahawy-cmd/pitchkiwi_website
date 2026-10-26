@@ -13,7 +13,7 @@ export function isSafeDownloadUrl(value) {
   }
 }
 
-export const DEFAULT_DOWNLOAD_URL = "https://github.com/ayshahawy-cmd/pitchkiwi/releases/download/v0.8.3-beta.1/PitchKiwi-macOS.zip";
+export const DEFAULT_DOWNLOAD_URL = "https://github.com/ayshahawy-cmd/pitchkiwi/releases/download/v0.8.4-beta.1/PitchKiwi-macOS.dmg";
 
 export default function handler(request, response) {
   if (request.method !== "GET") {

@@ -1,5 +1,5 @@
 import { createReadStream } from "node:fs";
-import { stat } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import { createServer } from "node:http";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -7,6 +7,7 @@ import betaHandler from "../api/beta-downloads.js";
 import downloadHandler from "../api/download.js";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
+const redirects = JSON.parse(await readFile(new URL("../vercel.json", import.meta.url), "utf8")).redirects || [];
 const devPort = Number(process.env.PITCHKIWI_DEV_PORT || 4173);
 const mimeTypes = { ".css": "text/css", ".html": "text/html", ".js": "text/javascript", ".png": "image/png", ".svg": "image/svg+xml", ".xml": "application/xml" };
 
@@ -47,6 +48,11 @@ async function serveStatic(pathname, response) {
 createServer(async (request, response) => {
   const pathname = new URL(request.url, `http://${request.headers.host}`).pathname;
   const adaptedResponse = responseAdapter(response);
+  const redirect = redirects.find((entry) => entry.source === pathname);
+  if (redirect) {
+    adaptedResponse.redirect(redirect.permanent ? 308 : 307, redirect.destination);
+    return;
+  }
   if (pathname === "/api/beta-downloads") {
     request.body = await readBody(request);
     await betaHandler(request, adaptedResponse);

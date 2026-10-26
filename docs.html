@@ -132,7 +132,7 @@
       <li><a href="#hotkey">Setting your hotkey</a></li>
       <li><a href="#prompt-mode">Prompt Mode</a></li>
       <li><a href="#troubleshooting">Troubleshooting</a></li>
-      <li><a href="#beta-access">Beta access</a></li>
+      <li><a href="#beta-access">Free &amp; open source</a></li>
     </ul>
   </aside>
 
@@ -152,14 +152,14 @@
     <section id="install">
       <h2><span class="step-num">02</span>Install</h2>
       <ol>
-        <li>Open the <a href="/download/">download page</a> and get the ZIP and checksum from <a href="https://github.com/ayshahawy-cmd/pitchkiwi/releases">GitHub Releases</a>. No email, account, or payment is required.</li>
-        <li>Download and open the ZIP, then drag <code class="inline">PitchKiwi.app</code> into Applications.</li>
-        <li>This beta is ad-hoc signed and not notarized. After trying to open it, use <strong>System Settings → Privacy &amp; Security → Open Anyway</strong> and confirm. Older macOS versions may also offer Control-click → Open. Verify the release checksum first.</li>
+        <li>Open the <a href="/download/">download page</a> and get the DMG and checksum from <a href="https://github.com/ayshahawy-cmd/pitchkiwi/releases">GitHub Releases</a>. No email, account, or payment is required.</li>
+        <li>Open <code class="inline">PitchKiwi-macOS.dmg</code> and drag <code class="inline">PitchKiwi.app</code> onto its Applications shortcut, then eject the disk image.</li>
+        <li>Open PitchKiwi from Applications and confirm the normal macOS first-launch prompt. The official DMG and app are Developer ID signed and notarized by Apple. Verify the release checksum if you want to check the downloaded file.</li>
         <li>Grant the two permissions PitchKiwi asks for: Microphone and Accessibility.</li>
         <li>Complete the short in-app onboarding, then try dictation in TextEdit.</li>
       </ol>
       <div class="callout">
-        <strong>Why the extra click on first launch?</strong> The current beta is not notarized. Follow <a href="https://support.apple.com/en-ca/102445">Apple’s per-app approval instructions</a> after verifying the download.
+        <strong>Download from the official release.</strong> The DMG includes the local English model and Apple notarization tickets. A ZIP is available on the release page too. Older versions and developer builds may have a different signing status.
       </div>
     </section>
 
@@ -194,7 +194,7 @@
       <p class="muted">Use Copy on the latest result and paste manually. Check Accessibility access and keep the destination focused while recognition finishes. There is no adjustable paste-delay preference in this beta. Report the target app/version using synthetic text if the problem persists.</p>
 
       <p><strong>Permissions stopped working after an update.</strong></p>
-      <p class="muted">Unsigned builds can lose their permission grants when the app is rebuilt. Reset and re-grant:</p>
+      <p class="muted">Rebuilt developer copies or an older ad-hoc build can lose permission grants when their code signature changes. Reset and re-grant:</p>
       <pre class="code-block">tccutil reset Accessibility com.pitchkiwi.app
 tccutil reset Microphone com.pitchkiwi.app</pre>
       <p class="muted">Then relaunch and grant both permissions again in System Settings.</p>
@@ -202,7 +202,7 @@ tccutil reset Microphone com.pitchkiwi.app</pre>
     </section>
 
     <section id="beta-access">
-      <h2><span class="step-num">07</span>Beta access</h2>
+      <h2><span class="step-num">07</span>Free &amp; open source</h2>
       <p>PitchKiwi is free and open source under the <a href="https://github.com/ayshahawy-cmd/pitchkiwi/blob/main/LICENSE">MIT License</a>. Download directly from GitHub without signing up.</p>
       <ul>
         <li>No account or password.</li>

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 
-const files = ["index.html", "docs.html", "download/index.html", "legal.html", "get-started.html", "README.md", "hero.md", "pricing.md", "problem.md", "solution.md"];
+const files = ["index.html", "docs.html", "download/index.html", "legal.html", "get-started.html", "README.md", "hero.md", "download.md", "problem.md", "solution.md"];
 const root = new URL("../", import.meta.url);
 const pages = Object.fromEntries(await Promise.all(files.map(async (file) => [file, await readFile(new URL(file, root), "utf8")])));
 const combined = Object.values(pages).join("\n");
@@ -18,7 +18,9 @@ assert.doesNotMatch(pages["index.html"], /data-beta-form|input[^>]+type="email"/
 assert.match(pages["download/index.html"], /href="\/api\/download"/);
 assert.match(pages["download/index.html"], /macOS 14\+/);
 assert.match(pages["download/index.html"], /Apple Silicon/);
-assert.match(pages["download/index.html"], /not notarized/);
+assert.match(pages["download/index.html"], /signed and notarized/);
+assert.match(pages["download/index.html"], /PitchKiwi-macOS\.dmg/);
+assert.doesNotMatch(pages["index.html"], /pricing-grid|price-card|class="amount"/);
 assert.match(pages["download/index.html"], /SHA-256/);
 assert.match(pages["legal.html"], /MIT License/);
 assert.ok(!/Fn\+Shift by default|increase the paste delay/.test(pages["docs.html"]), "Docs must not advertise unimplemented controls");

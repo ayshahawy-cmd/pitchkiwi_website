@@ -67,6 +67,7 @@ test("download endpoint uses the public release without configuration", () => {
   downloadHandler({ method: "GET" }, response);
   assert.equal(response.statusCode, 302);
   assert.equal(response.redirectTo, DEFAULT_DOWNLOAD_URL);
+  assert.ok(DEFAULT_DOWNLOAD_URL.endsWith("/PitchKiwi-macOS.dmg"));
   if (previous) process.env.PITCHKIWI_BETA_DOWNLOAD_URL = previous;
 });
 

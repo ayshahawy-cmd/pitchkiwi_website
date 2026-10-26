@@ -288,36 +288,20 @@
   .horme-card p.horme-note { font-size: 13.5px; color: var(--muted); margin: 0 0 8px; }
   .horme-card p.horme-beta { font-size: 13.5px; color: var(--muted); margin: 0; }
 
-  /* Beta download */
-  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; max-width: 960px; margin: 0 auto; }
-  .price-card {
-    border-radius: 18px; padding: 36px; display: flex; flex-direction: column;
-  }
-  .price-card.primary { background: var(--dark); color: var(--dark-white); }
-  .price-card.secondary { background: var(--white); border: 1px solid var(--line); }
-  .price-card .amount { font-size: 44px; font-weight: 600; margin: 4px 0 4px; }
-  .price-card.primary .amount { color: var(--green); }
-  .price-card .amount .period { font-size: 15px; font-weight: 400; color: inherit; opacity: 0.6; margin-left: 6px; }
-  .price-card h3 { font-size: 15px; font-weight: 500; margin: 0; opacity: 0.7; }
-  .price-card .requirement { font-size: 13px; margin: 0 0 20px; }
-  .price-card.primary .requirement { color: rgba(243,238,226,0.6); }
-  .price-card.secondary .requirement { color: var(--muted); }
-  .price-card ul { list-style: none; margin: 22px 0 28px; padding: 0; display: grid; gap: 12px; }
-  .price-card.primary ul { color: rgba(243,238,226,0.78); }
-  .price-card.secondary ul { color: var(--muted); }
-  .price-card li { font-size: 14.5px; padding-left: 20px; position: relative; }
-  .price-card li::before {
-    content: '·'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 20px; line-height: 1;
-  }
-  .price-card .btn { margin-top: auto; align-self: flex-start; }
-  .horme-member-note { font-size: 13px; color: rgba(243,238,226,0.6); margin: 14px 0 0; }
-  .pricing-footnote { margin-top: 18px; font-size: 13.5px; color: var(--muted); text-align: center; }
-  .download-options { display: grid; gap: 14px; margin-top: auto; }
-  .download-options .btn { margin-top: 0; }
-  .download-note { margin: 0; color: rgba(243,238,226,0.64); font-size: 13px; line-height: 1.5; }
-  .download-help { font-size: 13.5px; color: inherit; text-underline-offset: 3px; }
-  .price-card.secondary .download-note { color: var(--muted); }
-  .price-card.secondary li::before { color: var(--ink); }
+  /* Free Mac download */
+  .mac-download { display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center; padding:40px; background:var(--dark); color:var(--dark-white); border-radius:20px; }
+  .download-eyebrow { margin:0 0 12px; color:var(--green); font:500 12px 'JetBrains Mono',monospace; }
+  .mac-download h3 { margin:0 0 14px; font-size:32px; line-height:1.15; letter-spacing:-.025em; }
+  .mac-download-copy > p:last-child { margin:0; color:rgba(243,238,226,.72); font-size:16px; line-height:1.6; }
+  .download-options { display:grid; gap:14px; }
+  .download-options .btn { justify-content:center; }
+  .download-note { margin:0; color:rgba(243,238,226,.64); font-size:13px; line-height:1.5; }
+  .download-help { font-size:13.5px; color:inherit; text-underline-offset:3px; }
+  .install-summary { display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 0; padding:0; list-style:none; font-size:13px; color:rgba(243,238,226,.8); }
+  .install-summary li { padding:8px 10px; border:1px solid rgba(243,238,226,.2); border-radius:8px; }
+  .github-support { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; padding:28px 0; margin-top:12px; border-bottom:1px solid var(--line); }
+  .github-support h3 { margin:0 0 8px; font-size:20px; }
+  .github-support p { margin:0; max-width:58ch; color:var(--muted); font-size:15px; line-height:1.6; }
 
   .about-note { max-width: 60ch; margin: 0 auto; padding: 8px 28px 48px; text-align: center; }
   .about-note p.about-body { font-size: 14.5px; color: var(--muted); line-height: 1.65; margin: 10px 0 0; }
@@ -337,7 +321,7 @@
     .hero::before { width: 300px; height: 300px; right: -80px; }
     .promptmode { grid-template-columns: 1fr; padding: 28px; }
     .features-row { grid-template-columns: 1fr 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; }
+    .mac-download { grid-template-columns:1fr; gap:28px; padding:28px; }
     .pipeline { flex-direction: column; align-items: stretch; }
     .pipeline .arrow { transform: rotate(90deg); align-self: center; padding: 6px 0; }
     .navlinks { gap: 16px; }
@@ -350,6 +334,7 @@
     .features-row { grid-template-columns: 1fr; }
     .wrap { padding: 0 20px; }
     .download-options .btn { width: 100%; }
+    .github-support .btn { width:100%; justify-content:center; }
   }
 
   /* Scroll reveal: only for visual "proof" moments (screenshots, the step
@@ -399,7 +384,7 @@
         <a class="btn btn-primary" href="/api/download">Download for Mac</a>
         <a class="btn btn-ghost" href="https://github.com/ayshahawy-cmd/pitchkiwi">View on GitHub</a>
       </div>
-      <p class="cta-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>Free and open source under MIT. No credit card required. macOS 14+, Apple Silicon.</p>
+      <p class="cta-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>Free and open source under MIT. DMG download. No signup. macOS 14+, Apple Silicon.</p>
       <div class="trust-row">
         <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>100% local, nothing leaves your Mac</span>
         <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Built for developers</span>
@@ -569,48 +554,37 @@ Done when: toggling works and the choice survives a restart</pre>
     </div>
   </section>
 
-  <!-- BETA DOWNLOAD -->
+  <!-- FREE MAC DOWNLOAD -->
   <section class="wrap" id="beta">
     <div class="section-head">
-      <h2>Two ways to get PitchKiwi.</h2>
-      <p>Download the ready-to-use Mac app, or get the source on GitHub. Free and open source under MIT.</p>
+      <h2>Free. Open source. Ready for your Mac.</h2>
+      <p>No plans, subscriptions, or signup. Download PitchKiwi and start speaking.</p>
     </div>
-    <div class="pricing-grid">
-      <div class="price-card primary">
-        <h3>Ready to use</h3>
-        <div class="amount">Mac app<span class="period">free beta</span></div>
-        <p class="requirement"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon required</p>
-        <ul>
-          <li>Download the ZIP, unzip it, and move PitchKiwi to Applications</li>
-          <li>English speech model included; dictation runs locally</li>
-          <li>No build tools, account, or API key needed</li>
-          <li>Community beta; ad-hoc signed and not notarized</li>
-        </ul>
-        <div class="download-options">
-          <a class="btn btn-on-dark" href="/api/download">Download for Mac</a>
-          <a class="download-help" href="/download/">Installation guide &amp; checksum</a>
-          <p class="download-note">No email signup. Your speech stays on your Mac.</p>
-        </div>
+    <div class="mac-download">
+      <div class="mac-download-copy">
+        <p class="download-eyebrow">PITCHKIWI FOR MAC</p>
+        <h3>Your voice, on your Mac.</h3>
+        <p>The app and English speech model are included. Open the DMG, drag PitchKiwi into Applications, and follow the short setup guide.</p>
+        <ol class="install-summary" aria-label="Installation overview">
+          <li>1. Open the DMG</li>
+          <li>2. Drag to Applications</li>
+          <li>3. Launch PitchKiwi</li>
+        </ol>
       </div>
-      <div class="price-card secondary">
-        <h3>For developers</h3>
-        <div class="amount">Open source</div>
-        <p class="requirement">Native Swift app · MIT License</p>
-        <ul>
-          <li>Browse the complete source and documentation</li>
-          <li>Clone or fork the repository and build it yourself</li>
-          <li>Report issues, suggest improvements, or contribute</li>
-          <li>Prefer a ready-made app? Find it in GitHub Releases</li>
-        </ul>
-        <div class="download-options">
-          <a class="btn btn-primary" href="https://github.com/ayshahawy-cmd/pitchkiwi">View on GitHub</a>
-          <a class="download-help" href="https://github.com/ayshahawy-cmd/pitchkiwi/blob/main/docs/DEVELOPMENT.md">Build from source</a>
-          <a class="download-help" href="https://github.com/ayshahawy-cmd/pitchkiwi/releases/tag/v0.8.3-beta.1">Download on GitHub Releases</a>
-          <p class="download-note">Source builds require an Apple Silicon Mac and a Swift 6 toolchain.</p>
-        </div>
+      <div class="download-options">
+        <a class="btn btn-on-dark" href="/api/download">Download for Mac</a>
+        <p class="download-note">DMG · Apple Silicon (M1+) · macOS 14+<br>Developer ID signed and notarized by Apple.</p>
+        <a class="download-help" href="/download/">Installation guide &amp; checksum</a>
+        <a class="download-help" href="https://github.com/ayshahawy-cmd/pitchkiwi/releases/tag/v0.8.4-beta.1">All downloads on GitHub</a>
       </div>
     </div>
-    <p class="pricing-footnote">Both options run locally on your Mac. GitHub hosts the source and downloads; PitchKiwi is a desktop app.</p>
+    <div class="github-support">
+      <div>
+        <h3>Help make PitchKiwi better.</h3>
+        <p>It’s free under the MIT License. If it’s useful to you, star the project, report an issue, or contribute on GitHub.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://github.com/ayshahawy-cmd/pitchkiwi">Star or contribute on GitHub</a>
+    </div>
   </section>
 
   <section class="about-note">

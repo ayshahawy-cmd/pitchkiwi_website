@@ -4,14 +4,14 @@ The open-source website for **PitchKiwi**, a native Mac dictation tool for devel
 
 **[Download the app](https://github.com/ayshahawy-cmd/pitchkiwi/releases)** · **[App source](https://github.com/ayshahawy-cmd/pitchkiwi)** · **[User guide](https://github.com/ayshahawy-cmd/pitchkiwi/blob/main/docs/USER_GUIDE.md)** · **[Website](https://pitchkiwi.com)**
 
-Both the website and app use MIT licenses. Downloads require no signup, email, account, API key, or payment. The app beta is ad-hoc signed and **not notarized**. It requires Apple Silicon and macOS 14+ and includes an English speech model. This website does not itself transcribe audio.
+Both the website and app use MIT licenses. Downloads require no signup, email, account, API key, or payment. The official 0.8.4 beta app and DMG are Developer ID signed and notarized by Apple; ordinary source/CI builds remain ad-hoc signed. It requires Apple Silicon and macOS 14+ and includes an English speech model. This website does not itself transcribe audio.
 
 ## Downloading and using the Mac app
 
-1. Visit [GitHub Releases](https://github.com/ayshahawy-cmd/pitchkiwi/releases) and download `PitchKiwi-macOS.zip` and its `.sha256` file from the same release.
-2. Optionally verify in Downloads with `shasum -a 256 -c PitchKiwi-macOS.zip.sha256`.
-3. Unzip and move `PitchKiwi.app` to Applications.
-4. Try opening it. If blocked, follow [Apple's per-app approval instructions](https://support.apple.com/en-ca/102445) under System Settings → Privacy & Security → Open Anyway. The current community beta is not notarized.
+1. Visit [GitHub Releases](https://github.com/ayshahawy-cmd/pitchkiwi/releases) and download `PitchKiwi-macOS.dmg` and its `.sha256` file from the same release.
+2. Optionally verify in Downloads with `shasum -a 256 -c PitchKiwi-macOS.dmg.sha256`.
+3. Open the DMG, drag `PitchKiwi.app` onto the Applications shortcut, and eject the image. A ZIP is also available on GitHub.
+4. Open PitchKiwi from Applications and confirm the normal macOS first-launch prompt. The official app and DMG carry stapled notarization tickets.
 5. Grant Microphone and Accessibility in onboarding.
 6. Click a text field, hold Fn/Globe, speak, then release. Double-press Fn for hands-free capture, press again to stop, or Escape to cancel. The app inserts text without pressing Return.
 7. Choose Dictation or Agent Prompt in Command Deck before recording. Prompt length controls fixed local formatting guidance; it is not a cloud AI request.
@@ -39,10 +39,10 @@ For an optional custom download URL, copy `.env.example` to `.env` and edit it. 
 
 | Variable | Required | Behavior |
 | --- | --- | --- |
-| `PITCHKIWI_BETA_DOWNLOAD_URL` | No | Overrides the default public release ZIP; must be an absolute HTTPS URL |
+| `PITCHKIWI_BETA_DOWNLOAD_URL` | No | Overrides the default public release DMG; must be an absolute HTTPS URL |
 | `PITCHKIWI_DEV_PORT` | No | Local port; defaults to 4173 |
 
-The default download is pinned to `v0.8.3-beta.1` because GitHub's `/releases/latest` excludes prereleases. On each app release, update the default in `api/download.js`, `.env.example`, and the website's release-note link. The override is deployment configuration, never a browser-supplied redirect target.
+The default download is pinned to `v0.8.4-beta.1` because GitHub's `/releases/latest` excludes prereleases. On each app release, update the default in `api/download.js`, `.env.example`, and the website's release-note link. The override is deployment configuration, never a browser-supplied redirect target.
 
 ## Routes and source map
 
@@ -50,10 +50,11 @@ The default download is pinned to `v0.8.3-beta.1` because GitHub's `/releases/la
 | --- | --- |
 | `/` / `index.html` | Product overview, direct download and source links |
 | `/docs.html` | Installation, Fn, Agent Prompt, and troubleshooting |
-| `/download/` | App download, checksum/release links, installation steps |
+| `/download/` | Free Mac DMG, alternative ZIP, checksum/release links, installation steps |
+| `/pricing`, `/pricing.html` | Permanent compatibility redirects to `/download/`; no pricing page |
 | `/get-started.html` | Compatibility redirect to `/download/` |
 | `/legal.html` | Privacy, cookies, accessibility statement, MIT licensing |
-| `GET /api/download` | 302 redirect to the configured/default HTTPS ZIP; 503 on unsafe config; 405 for unsupported methods |
+| `GET /api/download` | 302 redirect to the configured/default HTTPS DMG; 503 on unsafe config; 405 for unsupported methods |
 | `POST /api/beta-downloads` | Legacy compatibility endpoint; validates email syntax, then redirects to `/download/`; does not log, store, or forward addresses in application code |
 | `assets/beta-download.js` | Legacy form helper retained for compatibility; current pages do not load an email form |
 | `screenshots/` | Existing app demonstration images, which may show older UI |
@@ -61,7 +62,7 @@ The default download is pinned to `v0.8.3-beta.1` because GitHub's `/releases/la
 | `scripts/check-site.mjs` | Open-source copy and local-link checks |
 | `scripts/build-site.mjs` | Copies an explicit allowlist of static files into `public/` |
 | `tests/api.test.js` | Node test-runner coverage for API behavior |
-| `hero.md`, `pricing.md`, `problem.md`, `solution.md` | Repository copy references, not separately deployed pages |
+| `hero.md`, `download.md`, `problem.md`, `solution.md` | Repository copy references, not separately deployed pages |
 
 The old email flow is not used by current navigation. Connecting an email list would be a separate feature requiring updated privacy copy and explicit consent. The app's local speech processing has no relationship to website form handling.
 
@@ -82,10 +83,10 @@ The static build includes public pages/assets, `LICENSE`, and `THIRD_PARTY_NOTIC
 1. Import this repository into Vercel using the account/project you intend to publish.
 2. Set framework preset to Other, build command `npm run build`, and output directory `public` (also declared in `vercel.json`).
 3. Use Node.js 22+ and let Vercel deploy the `api/` handlers as serverless functions.
-4. Leave the optional download override unset for the canonical release, or configure a public HTTPS ZIP.
+4. Leave the optional download override unset for the canonical release, or configure a public HTTPS DMG.
 5. Deploy, then check `/`, `/docs.html`, `/download/`, `/legal.html`, and the redirect from `/api/download`.
 
-A plain static host can serve `public/`, but `/api/download` and the legacy handler require serverless support. For static-only hosting, change the download button to the public GitHub ZIP or release page. For a fork, update canonical URLs, Open Graph tags, `robots.txt`, and `sitemap.xml`, along with repository/release/contact links before publishing.
+A plain static host can serve `public/`, but `/api/download` and the legacy handler require serverless support. For static-only hosting, change the download button to the public GitHub DMG or release page. For a fork, update canonical URLs, Open Graph tags, `robots.txt`, and `sitemap.xml`, along with repository/release/contact links before publishing.
 
 ## Data handling and external services
 
