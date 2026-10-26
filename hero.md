@@ -10,8 +10,8 @@ Your voice never leaves it.
 **Subcopy:**
 Hold a key, talk, and clean text lands wherever your cursor is: Claude Code, Cursor, Terminal, Slack, your browser. Speech recognition runs entirely on your Mac, so what you say out loud stays local and secure.
 
-**Primary CTA:** Download beta
-**Secondary CTA:** See it in action
+**Primary CTA:** Download for Mac → `/api/download`
+**Secondary CTA:** View on GitHub → `https://github.com/ayshahawy-cmd/pitchkiwi`
 
 **Microcopy under the buttons:**
 Free and open source under MIT. No signup required. macOS 14+, Apple Silicon.

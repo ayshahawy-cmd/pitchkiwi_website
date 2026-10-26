@@ -9,7 +9,8 @@ const combined = Object.values(pages).join("\n");
 for (const forbidden of [/\$\d+/, /gumroad/i, /free while in beta/i, /join waitlist/i, /request access/i, /you may not redistribute/i]) {
   assert.doesNotMatch(combined, forbidden, `Outdated public copy remains: ${forbidden}`);
 }
-assert.match(pages["index.html"], />Download beta</);
+assert.match(pages["index.html"], /href="\/api\/download">Download for Mac</);
+assert.match(pages["index.html"], /href="https:\/\/github\.com\/ayshahawy-cmd\/pitchkiwi">View on GitHub</);
 assert.match(pages["index.html"], /Free and open source under MIT\./);
 assert.match(pages["index.html"], /href="\/download\/"/);
 assert.match(pages["index.html"], /https:\/\/github\.com\/ayshahawy-cmd\/pitchkiwi/);

@@ -289,8 +289,7 @@
   .horme-card p.horme-beta { font-size: 13.5px; color: var(--muted); margin: 0; }
 
   /* Beta download */
-  .pricing-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: stretch; }
-  .pricing-grid.single { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; max-width: 960px; margin: 0 auto; }
   .price-card {
     border-radius: 18px; padding: 36px; display: flex; flex-direction: column;
   }
@@ -313,18 +312,12 @@
   .price-card .btn { margin-top: auto; align-self: flex-start; }
   .horme-member-note { font-size: 13px; color: rgba(243,238,226,0.6); margin: 14px 0 0; }
   .pricing-footnote { margin-top: 18px; font-size: 13.5px; color: var(--muted); text-align: center; }
-  .beta-form { display: grid; gap: 12px; margin-top: 24px; }
-  .beta-form label { font-size: 13px; color: rgba(243,238,226,0.72); }
-  .beta-form-row { display: flex; gap: 10px; }
-  .beta-form input {
-    min-width: 0; flex: 1; border: 1px solid rgba(243,238,226,0.24);
-    border-radius: 10px; padding: 12px 14px; color: var(--dark-white);
-    background: rgba(243,238,226,0.08); font: inherit;
-  }
-  .beta-form input::placeholder { color: rgba(243,238,226,0.46); }
-  .beta-form button:disabled { cursor: wait; opacity: 0.7; }
-  .beta-privacy { margin: 0; color: rgba(243,238,226,0.56); font-size: 12.5px; line-height: 1.5; }
-  .beta-error { min-height: 1.4em; margin: 0; color: #ffd1c7; font-size: 13px; }
+  .download-options { display: grid; gap: 14px; margin-top: auto; }
+  .download-options .btn { margin-top: 0; }
+  .download-note { margin: 0; color: rgba(243,238,226,0.64); font-size: 13px; line-height: 1.5; }
+  .download-help { font-size: 13.5px; color: inherit; text-underline-offset: 3px; }
+  .price-card.secondary .download-note { color: var(--muted); }
+  .price-card.secondary li::before { color: var(--ink); }
 
   .about-note { max-width: 60ch; margin: 0 auto; padding: 8px 28px 48px; text-align: center; }
   .about-note p.about-body { font-size: 14.5px; color: var(--muted); line-height: 1.65; margin: 10px 0 0; }
@@ -356,8 +349,7 @@
   @media (max-width: 480px) {
     .features-row { grid-template-columns: 1fr; }
     .wrap { padding: 0 20px; }
-    .beta-form-row { flex-direction: column; }
-    .beta-form-row .btn { width: 100%; }
+    .download-options .btn { width: 100%; }
   }
 
   /* Scroll reveal: only for visual "proof" moments (screenshots, the step
@@ -388,9 +380,9 @@
     </a>
     <div class="navlinks">
       <a class="plain" href="#solution">Features</a>
-      <a class="plain" href="#beta">Beta</a>
+      <a class="plain" href="https://github.com/ayshahawy-cmd/pitchkiwi">GitHub</a>
       <a class="plain" href="docs.html">Docs</a>
-      <a class="btn btn-primary" href="#beta">Download beta</a>
+      <a class="btn btn-primary" href="/api/download">Download for Mac</a>
     </div>
   </nav>
 </header>
@@ -404,8 +396,8 @@
       <h1>Speak into any app on your Mac. Your voice never leaves it.</h1>
       <p class="lead">Hold a key, talk, and clean text lands wherever your cursor is: Claude Code, Cursor, Terminal, Slack, your browser. Speech recognition runs entirely on your Mac, so what you say out loud stays local and secure.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#beta">Download beta</a>
-        <a class="btn btn-ghost" href="#demo">See it in action</a>
+        <a class="btn btn-primary" href="/api/download">Download for Mac</a>
+        <a class="btn btn-ghost" href="https://github.com/ayshahawy-cmd/pitchkiwi">View on GitHub</a>
       </div>
       <p class="cta-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>Free and open source under MIT. No credit card required. macOS 14+, Apple Silicon.</p>
       <div class="trust-row">
@@ -580,28 +572,45 @@ Done when: toggling works and the choice survives a restart</pre>
   <!-- BETA DOWNLOAD -->
   <section class="wrap" id="beta">
     <div class="section-head">
-      <h2>Get Pitch Kiwi</h2>
-      <p>Free and open source under MIT.</p>
+      <h2>Two ways to get PitchKiwi.</h2>
+      <p>Download the ready-to-use Mac app, or get the source on GitHub. Free and open source under MIT.</p>
     </div>
-    <div class="pricing-grid single">
+    <div class="pricing-grid">
       <div class="price-card primary">
-        <h3>PitchKiwi beta</h3>
-        <div class="amount">Free<span class="period">MIT open source</span></div>
+        <h3>Ready to use</h3>
+        <div class="amount">Mac app<span class="period">free beta</span></div>
         <p class="requirement"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;vertical-align:-3px;margin-right:4px;"><path d="M11.5,8 C10,6.5 8,6 6.5,7.5 C4,10 4,14 6,17.5 C7.5,20 9.5,21.5 12,21.5 C14.5,21.5 16.5,20 18,17.5 C20,14 20,10 17.5,7.5 C16,6 14.3,6.3 13,7.3 C12.5,7.7 12,8 11.5,8 Z M13,6 C14,4.5 16,4 17,4.5 C16.5,6 14.5,6.5 13,6 Z"/></svg>macOS 14+, Apple Silicon required</p>
         <ul>
-          <li>Download the macOS beta immediately</li>
-          <li>Local, on-device speech recognition — your voice never leaves your Mac</li>
-          <li>Prompt Mode for developer workflows</li>
-          <li>No account, password, or credit card</li>
+          <li>Download the ZIP, unzip it, and move PitchKiwi to Applications</li>
+          <li>English speech model included; dictation runs locally</li>
+          <li>No build tools, account, or API key needed</li>
+          <li>Community beta; ad-hoc signed and not notarized</li>
         </ul>
-        <div class="beta-form">
-          <a class="btn btn-on-dark" href="/download/">Download beta</a>
-          <a href="https://github.com/ayshahawy-cmd/pitchkiwi" style="color:var(--green)">View the source on GitHub</a>
-          <p class="beta-privacy">No email signup. MIT-licensed source. Includes the local English model.</p>
+        <div class="download-options">
+          <a class="btn btn-on-dark" href="/api/download">Download for Mac</a>
+          <a class="download-help" href="/download/">Installation guide &amp; checksum</a>
+          <p class="download-note">No email signup. Your speech stays on your Mac.</p>
+        </div>
+      </div>
+      <div class="price-card secondary">
+        <h3>For developers</h3>
+        <div class="amount">Open source</div>
+        <p class="requirement">Native Swift app · MIT License</p>
+        <ul>
+          <li>Browse the complete source and documentation</li>
+          <li>Clone or fork the repository and build it yourself</li>
+          <li>Report issues, suggest improvements, or contribute</li>
+          <li>Prefer a ready-made app? Find it in GitHub Releases</li>
+        </ul>
+        <div class="download-options">
+          <a class="btn btn-primary" href="https://github.com/ayshahawy-cmd/pitchkiwi">View on GitHub</a>
+          <a class="download-help" href="https://github.com/ayshahawy-cmd/pitchkiwi/blob/main/docs/DEVELOPMENT.md">Build from source</a>
+          <a class="download-help" href="https://github.com/ayshahawy-cmd/pitchkiwi/releases/tag/v0.8.3-beta.1">Download on GitHub Releases</a>
+          <p class="download-note">Source builds require an Apple Silicon Mac and a Swift 6 toolchain.</p>
         </div>
       </div>
     </div>
-    <p class="pricing-footnote">Download, verify, and install. The source and build instructions are public.</p>
+    <p class="pricing-footnote">Both options run locally on your Mac. GitHub hosts the source and downloads; PitchKiwi is a desktop app.</p>
   </section>
 
   <section class="about-note">
