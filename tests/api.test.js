@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import betaHandler, { createBetaRecord, isValidEmail, normalizeEmail } from "../api/beta-downloads.js";
-import downloadHandler, { isSafeDownloadUrl } from "../api/download.js";
+import downloadHandler, { DEFAULT_DOWNLOAD_URL, isSafeDownloadUrl } from "../api/download.js";
 
 function responseMock() {
   return {
@@ -60,14 +60,35 @@ test("download URL accepts HTTPS only", () => {
   assert.equal(isSafeDownloadUrl("javascript:alert(1)"), false);
 });
 
-test("download endpoint fails safely when not configured", () => {
+test("download endpoint uses the public release without configuration", () => {
   const previous = process.env.PITCHKIWI_BETA_DOWNLOAD_URL;
   delete process.env.PITCHKIWI_BETA_DOWNLOAD_URL;
   const response = responseMock();
   downloadHandler({ method: "GET" }, response);
-  assert.equal(response.statusCode, 503);
-  assert.equal(response.body.ok, false);
+  assert.equal(response.statusCode, 302);
+  assert.equal(response.redirectTo, DEFAULT_DOWNLOAD_URL);
   if (previous) process.env.PITCHKIWI_BETA_DOWNLOAD_URL = previous;
+});
+
+test("download endpoint rejects an unsafe override", () => {
+  const previous = process.env.PITCHKIWI_BETA_DOWNLOAD_URL;
+  try {
+    process.env.PITCHKIWI_BETA_DOWNLOAD_URL = "http://downloads.example.com/PitchKiwi.zip";
+    const response = responseMock();
+    downloadHandler({ method: "GET" }, response);
+    assert.equal(response.statusCode, 503);
+    assert.equal(response.body.ok, false);
+  } finally {
+    if (previous === undefined) delete process.env.PITCHKIWI_BETA_DOWNLOAD_URL;
+    else process.env.PITCHKIWI_BETA_DOWNLOAD_URL = previous;
+  }
+});
+
+test("download endpoint rejects methods other than GET", () => {
+  const response = responseMock();
+  downloadHandler({ method: "POST" }, response);
+  assert.equal(response.statusCode, 405);
+  assert.equal(response.headers.Allow, "GET");
 });
 
 test("download endpoint redirects to the configured artifact", () => {

@@ -13,13 +13,15 @@ export function isSafeDownloadUrl(value) {
   }
 }
 
+export const DEFAULT_DOWNLOAD_URL = "https://github.com/ayshahawy-cmd/pitchkiwi/releases/download/v0.8.3-beta.1/PitchKiwi-macOS.zip";
+
 export default function handler(request, response) {
   if (request.method !== "GET") {
     response.setHeader("Allow", "GET");
     return sendJson(response, 405, { ok: false, error: "Method not allowed." });
   }
 
-  const downloadUrl = process.env.PITCHKIWI_BETA_DOWNLOAD_URL;
+  const downloadUrl = process.env.PITCHKIWI_BETA_DOWNLOAD_URL || DEFAULT_DOWNLOAD_URL;
   if (!isSafeDownloadUrl(downloadUrl)) {
     return sendJson(response, 503, {
       ok: false,

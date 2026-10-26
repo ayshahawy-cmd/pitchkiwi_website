@@ -1,9 +1,13 @@
 {
   "name": "pitchkiwi-website",
   "private": true,
+  "license": "MIT",
+  "description": "The open-source PitchKiwi website: local Mac dictation, downloads, installation help, and privacy documentation.",
+  "repository": { "type": "git", "url": "https://github.com/ayshahawy-cmd/pitchkiwi_website.git" },
+  "engines": { "node": ">=22" },
   "type": "module",
   "scripts": {
-    "dev": "node scripts/dev.mjs",
+    "dev": "node --env-file-if-exists=.env scripts/dev.mjs",
     "lint": "node --check api/beta-downloads.js && node --check api/download.js && node --check assets/beta-download.js && node --check scripts/dev.mjs && node --check scripts/check-site.mjs && node --check scripts/build-site.mjs",
     "typecheck": "node --check api/beta-downloads.js && node --check api/download.js && node --check assets/beta-download.js && node --check scripts/dev.mjs && node --check scripts/check-site.mjs && node --check scripts/build-site.mjs",
     "test": "node --test",

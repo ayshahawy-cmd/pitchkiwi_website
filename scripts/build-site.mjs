@@ -14,6 +14,8 @@ const files = [
   "docs.html",
   "get-started.html",
   "legal.html",
+  "LICENSE",
+  "THIRD_PARTY_NOTICES.md",
   "robots.txt",
   "sitemap.xml"
 ];

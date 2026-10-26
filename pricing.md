@@ -1,21 +1,10 @@
-# Beta download
+# Open-source download
 
-**Section headline:**
-Get Pitch Kiwi
+PitchKiwi is free to download, with MIT-licensed source code and original assets.
 
-**Body:**
-Free while in beta.
-
-## One-field download card
-
-**PitchKiwi beta**
-- Download the macOS beta immediately
-- Local, on-device speech recognition — your voice never leaves your Mac
-- Prompt Mode for developer workflows
-- No account, password, verification, or credit card
-- Email field: `you@example.com`
-- CTA: Download beta
-
-**Privacy copy:** We'll only use your email for Pitch Kiwi updates and relevant product announcements.
-
-**Small note under the card:** One field. Then straight to the download and installation steps.
+- Primary CTA: Download beta → `/download/`
+- Secondary CTA: View source → https://github.com/ayshahawy-cmd/pitchkiwi
+- macOS 14+, Apple Silicon, bundled English model.
+- No email signup, account, API key, or payment.
+- Explain the ad-hoc signature and unnotarized beta status before installation.
+- GitHub Releases hosts the ZIP, checksum, and release notes.

@@ -14,4 +14,4 @@ Hold a key, talk, and clean text lands wherever your cursor is: Claude Code, Cur
 **Secondary CTA:** See it in action
 
 **Microcopy under the buttons:**
-Free while in beta. No credit card required. macOS 14+, Apple Silicon.
+Free and open source under MIT. No signup required. macOS 14+, Apple Silicon.

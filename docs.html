@@ -152,14 +152,14 @@
     <section id="install">
       <h2><span class="step-num">02</span>Install</h2>
       <ol>
-        <li>Enter your email in the <a href="index.html#beta">beta download form</a>. No account, verification, or credit card is required.</li>
+        <li>Open the <a href="/download/">download page</a> and get the ZIP and checksum from <a href="https://github.com/ayshahawy-cmd/pitchkiwi/releases">GitHub Releases</a>. No email, account, or payment is required.</li>
         <li>Download and open the ZIP, then drag <code class="inline">PitchKiwi.app</code> into Applications.</li>
-        <li>On first launch, macOS will say it can't verify the developer. This is expected: PitchKiwi isn't notarized with a paid Apple developer account. Right-click the app and choose <strong>Open</strong>, then confirm. You only do this once.</li>
+        <li>This beta is ad-hoc signed and not notarized. After trying to open it, use <strong>System Settings → Privacy &amp; Security → Open Anyway</strong> and confirm. Older macOS versions may also offer Control-click → Open. Verify the release checksum first.</li>
         <li>Grant the two permissions PitchKiwi asks for: Microphone and Accessibility.</li>
         <li>Complete the short in-app onboarding, then try dictation in TextEdit.</li>
       </ol>
       <div class="callout">
-        <strong>Why the extra click on first launch?</strong> The current beta is not notarized. Control-clicking the app and choosing Open lets macOS confirm your choice without disabling Gatekeeper.
+        <strong>Why the extra click on first launch?</strong> The current beta is not notarized. Follow <a href="https://support.apple.com/en-ca/102445">Apple’s per-app approval instructions</a> after verifying the download.
       </div>
     </section>
 
@@ -184,14 +184,14 @@
 
     <section id="prompt-mode">
       <h2><span class="step-num">05</span>Prompt Mode</h2>
-      <p>Hold the Prompt Mode shortcut (Fn+Shift by default) and talk through what you want built, even if it's messy and unstructured. PitchKiwi turns it into a prompt with Goal, Context, Requirements, and Done when, ready to paste into Claude Code or any other agent.</p>
+      <p>Select <strong>Agent Prompt</strong> in Command Deck before dictating with Fn. Choose Short to organize your spoken cues into Goal, Context, Requirements, and Done when. Medium and Detailed append fixed local execution guidance. There is no separate Fn+Shift shortcut or cloud rewrite model. Compare Show original when you want to inspect cleanup.</p>
     </section>
 
     <section id="troubleshooting">
       <h2><span class="step-num">06</span>Troubleshooting</h2>
 
       <p><strong>My old clipboard content gets pasted instead of the transcription.</strong></p>
-      <p class="muted">This can happen under load, when the receiving app reads the clipboard before PitchKiwi restores your previous copy. Open Settings and increase the paste delay slightly, then try again in the app where it happened.</p>
+      <p class="muted">Use Copy on the latest result and paste manually. Check Accessibility access and keep the destination focused while recognition finishes. There is no adjustable paste-delay preference in this beta. Report the target app/version using synthetic text if the problem persists.</p>
 
       <p><strong>Permissions stopped working after an update.</strong></p>
       <p class="muted">Unsigned builds can lose their permission grants when the app is rebuilt. Reset and re-grant:</p>
@@ -203,13 +203,13 @@ tccutil reset Microphone com.pitchkiwi.app</pre>
 
     <section id="beta-access">
       <h2><span class="step-num">07</span>Beta access</h2>
-      <p>PitchKiwi is free while in beta. The download form asks for one email address and then takes you directly to the download page.</p>
+      <p>PitchKiwi is free and open source under the <a href="https://github.com/ayshahawy-cmd/pitchkiwi/blob/main/LICENSE">MIT License</a>. Download directly from GitHub without signing up.</p>
       <ul>
         <li>No account or password.</li>
-        <li>No email verification.</li>
+        <li>No email signup.</li>
         <li>No payment information.</li>
       </ul>
-      <p class="muted">Your email is for PitchKiwi updates and relevant product announcements. Your voice and transcripts remain local to your Mac. See the full <a href="legal.html#privacy">Privacy Policy</a>.</p>
+      <p class="muted">Your voice and transcripts remain local to your Mac. Read the <a href="https://github.com/ayshahawy-cmd/pitchkiwi/blob/main/docs/USER_GUIDE.md">complete user guide</a>, <a href="https://github.com/ayshahawy-cmd/pitchkiwi/blob/main/docs/DEVELOPMENT.md">build instructions</a>, and <a href="https://github.com/ayshahawy-cmd/pitchkiwi/blob/main/docs/TROUBLESHOOTING.md">troubleshooting</a>. See the full <a href="legal.html#privacy">Privacy Policy</a>.</p>
     </section>
 
   </main>

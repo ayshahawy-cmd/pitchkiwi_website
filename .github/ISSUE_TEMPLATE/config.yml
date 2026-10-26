@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Native app bugs
+    url: https://github.com/ayshahawy-cmd/pitchkiwi/issues/new/choose
+    about: Dictation, model, Fn key, and Mac app issues belong in the app repository.
+  - name: Report a website vulnerability privately
+    url: https://github.com/ayshahawy-cmd/pitchkiwi_website/security/advisories/new
+    about: Do not disclose vulnerabilities in public issues.

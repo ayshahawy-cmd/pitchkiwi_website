@@ -39,8 +39,8 @@ Done when: toggling works and the choice survives a restart
 
 | Data | Handling |
 |---|---|
-| Beta download email | Used for PitchKiwi updates and relevant product announcements |
+| Download | Public GitHub release; no email signup |
 | Microphone audio | Processed locally and not uploaded by PitchKiwi |
 | Dictated text | Processed locally and inserted at your cursor |
 
-The website email is separate from the app's local speech pipeline.
+The website links to MIT-licensed source and public release downloads.

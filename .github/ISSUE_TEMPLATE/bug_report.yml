@@ -1,0 +1,22 @@
+name: Website bug
+description: Report a broken page, link, download, or installation instruction.
+title: "[Website bug]: "
+labels: [bug]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or route
+      placeholder: /download/
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Steps, expected result, and actual result
+      description: Include browser/device details. Remove private information from screenshots.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: Do not include real email addresses, credentials, recordings, transcripts, or private source. Report security vulnerabilities privately.
